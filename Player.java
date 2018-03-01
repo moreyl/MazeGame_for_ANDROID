@@ -4,6 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.util.Log;
 
 /**
@@ -31,7 +32,7 @@ public class Player implements Drawable {  // Объявляем класс Play
     }
 
     @Override
-    public void drow(Canvas canvas) {  // переопредилили метод drow() интерфейса Drawable
+    public void drow(Canvas canvas, Rect rect) {  // переопредилили метод drow() интерфейса Drawable
         canvas.drawRect(point.x, point.y,  point.x + 50, point.y + 50, paint); // принесли экземпляр класса Canvas
 
 

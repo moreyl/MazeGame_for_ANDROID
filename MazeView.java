@@ -28,5 +28,10 @@ public class MazeView extends View { // унаследовали от android к
         gameManager.drow(canvas);
     }
 
+    protected void onSizeChanged(int w , int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        gameManager.setScreenSize(w, h);
+    }
+
 
 }
