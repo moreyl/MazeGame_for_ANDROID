@@ -25,7 +25,7 @@ public class MazeView extends View { // унаследовали от android к
 
     @Override
     protected void onDraw(Canvas canvas) {
-        gameManager.drow(canvas);
+        gameManager.draw(canvas);
     }
 
     protected void onSizeChanged(int w , int h, int oldw, int oldh) {

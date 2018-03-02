@@ -32,7 +32,7 @@ public class Maze implements Drawable {
 
     public Maze(int size) {
         wallPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        wallPaint.setColor(Color.GREEN);
+        wallPaint.setColor(Color.rgb(163, 157, 157));
         this.size = size;
         array = new boolean[size][size];
         generateMaze();
@@ -104,7 +104,7 @@ public class Maze implements Drawable {
         return isUsedCell(x, y);
     }
 
-    public boolean canPlayerGoTo(int x, int y) {
+    public boolean canPlayerGoTo(int x, int y) {  // может ли пользователь пойти в право или в лево
         return array[y][x];
     }
 
@@ -119,7 +119,7 @@ public class Maze implements Drawable {
     }
 
     @Override
-    public void drow(Canvas canvas, Rect rect) {
+    public void draw(Canvas canvas, Rect rect) {
         float cellSize = (float) (rect.right - rect.left) / size;
         Log.i("MAZE", String.valueOf(cellSize));
         for (int i = 0; i < size; ++i) {
@@ -140,3 +140,4 @@ public class Maze implements Drawable {
     }
 
 }
+

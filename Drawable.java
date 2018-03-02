@@ -8,6 +8,5 @@ import android.graphics.Rect;
  */
 
 interface Drawable {
-    void drow (Canvas canvas, Rect rect); //Интерфейс с одним методом draw, который принемает экхемпляр класса Canvas
-
+    void draw(Canvas canvas, Rect rect);
 }

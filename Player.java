@@ -11,30 +11,29 @@ import android.util.Log;
  * Created by moreyl on 28.02.2018.
  */
 
-public class Player implements Drawable {  // Объявляем класс Player который реализуеи нитерфейс Drawable
+public class Player extends Dot {
 
-    private Paint paint; // для объекта Player создали его собственный экземпляр Paint
-    private Point point;
-
-
-
-    public Player() {  // инициализация в конструкторе
-        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        paint.setColor(Color.RED);
-        point = new Point(0,0);
+    public Player(Point start, int size) {
+        super(size, start, getPaint());
     }
 
-    public void move(int diffX, int diffY) {
-        point.x += diffX;
-        point.y += diffY;
+    private static Paint getPaint() {
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(Color.rgb(52, 120, 128));
+        return paint;
+    }
+
+    public void goTo(int x, int y) {
+        point.x = x;
+        point.y = y;
         Log.i("Player", String.format("%d %d", point.x, point.y));
-
     }
 
-    @Override
-    public void drow(Canvas canvas, Rect rect) {  // переопредилили метод drow() интерфейса Drawable
-        canvas.drawRect(point.x, point.y,  point.x + 50, point.y + 50, paint); // принесли экземпляр класса Canvas
+    public int getX() {
+        return point.x;
+    }
 
-
+    public int getY() {
+        return point.y;
     }
 }
